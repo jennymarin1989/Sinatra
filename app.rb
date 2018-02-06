@@ -14,10 +14,16 @@ get "/bensmagicbox" do
   "My box is full of magic things"
 end
 
-get "/cat" do
+get "/random-cat" do
   @name = ["Amigo", "Oscar", "Viking"].sample
   erb(:index)
 end
 
+get "/named-cat" do
+  p params
+  @name = params[:name]
+  @surname = params[:surname]
+    erb(:index)
+end
 
 # send_file('/root/dev/notes/images/'+params[:file], :disposition => 'inline')
